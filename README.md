@@ -1,3 +1,5 @@
+[![CI](https://github.com/nogibjj/Mu-Niu-Data-Pipeline-with-Databricks/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Mu-Niu-Data-Pipeline-with-Databricks/actions/workflows/CI.yml)
+
 # Mu-Niu-Data-Pipeline-with-Databricks
 
 
