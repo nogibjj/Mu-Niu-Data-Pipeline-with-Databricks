@@ -9,9 +9,11 @@ def load_database(dataset="data/student_performance.csv", encoding="utf-8"):
     next(payload)
 
     load_dotenv()
-    with sql.connect(server_hostname = os.getenv("SERVER_HOSTNAME"),
-                     http_path = os.getenv("HTTP_PATH"),
-                     access_token = os.getenv("DATABRICKS_KEY")) as connection:
+    with sql.connect(
+        server_hostname=os.getenv("SERVER_HOSTNAME"),
+        http_path=os.getenv("HTTP_PATH"),
+        access_token=os.getenv("DATABRICKS_KEY"),
+    ) as connection:
         with connection.cursor() as cursor:
             cursor.execute("DROP TABLE IF EXISTS student_performance")
             cursor.execute(
@@ -34,11 +36,11 @@ def load_database(dataset="data/student_performance.csv", encoding="utf-8"):
                 string_sql += "\n" + str(tuple(i)) + ","
             string_sql = string_sql[:-1] + ";"
             cursor.execute(string_sql)
-            
+
             cursor.close()
             connection.close()
     return "Load Success"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     load_database()

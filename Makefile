@@ -3,10 +3,10 @@ install:
 		pip install -r requirements.txt
 
 format:
-	black *.py
+	black mylib/*.py
 
 lint:
-	ruff *.py
+	ruff mylib/*.py
 
 test:
 	# test

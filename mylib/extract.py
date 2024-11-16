@@ -1,6 +1,7 @@
 import requests
 import os
 
+
 def extract(
     url="https://raw.githubusercontent.com/nogibjj/Mu-Niu-Pandas-Descriptive-Statistics-Script/main/student_performance.csv",
     file_path="data/student_performance.csv",
@@ -28,6 +29,7 @@ def extract(
     except Exception as e:
         # Print any errors that occur
         print(f"An error occurred: {e}")
+
 
 # Run the function
 if __name__ == "__main__":
