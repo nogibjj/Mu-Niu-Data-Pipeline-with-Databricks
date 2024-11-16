@@ -1,34 +1,50 @@
-# Rust Project
+# Mu-Niu-Data-Pipeline-with-Databricks
 
 
-## Project Structure
+## Project Overview
 
-- **psr/src/main.rs**: The main script that uses the library functions and outputs results.
-- **psr/src/lib.rs**: Contains core functions like create/drop table, load data and execute queries.
-- **Makefile**: Automates tasks like building, testing, and linting.
-- **Cargo.toml**: Project dependencies and settings for Rust.
+This project demonstrates how to create a Databricks Pipeline to manage and analyze student performance data effectively. The dataset includes information about student info, attendance rate, and grade. The pipeline supports operations using PySpark DataFrames, enabling efficient data processing for large datasets.
 
 
+## Databricks Setup Guide
 
-  
-## Automated Tasks
+1. Set up Computing Cluster using default configuration
 
-  - `make build`: Compiles the Rust code.
-  - `make test`: Runs the tests in `lib.rs`.
-  - `make lint`: Lints the code using `cargo clippy`.
-  - `make format`: Formats code using `cargo fmt`.
+2. Connecting to Github Repo and link to your account
 
-Below is an image showing tools used for this project, including check, format, lint, test, release, and a help menu for the CLI tool.
+3. Set up access token, path, and hoster in .env and github secrets
 
-![Alt text](data/workflow.png)
+4. Create Job in Databricks Jobs
+
+![](data/job.png)
+
+5. Run Job(got some errors need to be fixed)
+
+---
+
+## ETL Process Overview
+
+The ETL pipeline processes student data using **Python** and **PySpark**. It enables efficient data extracting, transformation, and storage for large datasets.
 
 
-In order to use our CLI normally, we have to run this in our terminal:
 
-```{r}
-export PATH=$PATH:/PATH TO YOUR REPO/sqlite/target/release
-```
+The pipeline consists of the following tasks:
+1. **Extract**: Retrieve data from an online source and save it locally.
+2. **Transform and Load**: Clean and process data
+3. **Query**: Run SQL queries on the processed data for insights.
 
-#### Binary Download Link
 
-https://github.com/nogibjj/Mu-Niu-Python-Script-Rust/actions/runs/11493330152/artifacts/2097270549
+
+### Task Dependencies
+
+Tasks are executed in the following order:
+
+1. **Extract**  
+   - Script: `mylib/extract.py`
+
+2. **Transform and Load**  
+   - Script: `mylib/transform.py`
+
+3. **Query**  
+   - Script: `mylib/query.py`
+

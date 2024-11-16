@@ -9,7 +9,7 @@ lint:
 	ruff *.py
 
 test:
-	# python -m pytest -vv --cov= *.py
+	# test
 
 deploy:
 	# deploy goes here
